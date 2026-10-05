@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timur Kuzhelev | Developer moving into games</title>
+<meta name="description" content="Portfolio of Timur Kuzhelev: full-stack developer with Unity and C# experience, moving into game development.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♠️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3EFE4;--ink:#12332A;--mute:#4D655C;--card:#FFFDF7;--line:#CFC8B4;--red:#B3342F;--brass:#8A6A1E;--felt:#0F3B2E;--felt-ink:#F3EFE4}
+@media (prefers-color-scheme:dark){:root{--bg:#0B2A21;--ink:#F3EFE4;--mute:#A9BDB3;--card:#103A2E;--line:#2A5A4A;--red:#E0574F;--brass:#D2AE5B;--felt:#071D17;--felt-ink:#F3EFE4}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:color-mix(in srgb,var(--felt) 92%,transparent);backdrop-filter:blur(8px);color:var(--felt-ink)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{text-decoration:none;position:relative;padding:4px 0}
+nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--brass);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav ul a:hover::after{transform:scaleX(1)}
+@media(max-width:560px){nav ul li:nth-child(n+3){display:none}}
+
+/* hero */
+.hero{background:var(--felt);color:var(--felt-ink);padding:120px 0 90px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}}
+h1{font-size:clamp(46px,8vw,86px);font-weight:800;letter-spacing:-.02em}
+.sub{font-size:20px;max-width:30em;margin:22px 0 0;opacity:.92}
+.role{margin-top:14px;color:var(--brass);font-weight:500;min-height:1.6em}
+.role span{border-right:2px solid var(--brass);padding-right:4px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:4px;text-decoration:none;font-weight:500;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--felt-ink);color:var(--felt)}
+.btn.alt{border:1px solid var(--felt-ink);color:var(--felt-ink)}
+.fan{position:relative;height:300px;max-width:360px;margin:0 auto;width:100%}
+.pc{position:absolute;left:50%;top:50%;width:120px;height:170px;margin:-85px 0 0 -60px;background:#FFFDF7;color:#12332A;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;font-size:54px;
+ transform:translate(0,-420px) rotate(0deg);opacity:0;animation:deal .9s cubic-bezier(.2,.9,.3,1.1) forwards;animation-delay:calc(var(--i)*.18s + .3s);transition:margin .25s}
+.pc i{position:absolute;top:8px;left:10px;font:700 18px/1 "Bricolage Grotesque",sans-serif;font-style:normal}
+.pc.r{color:#B3342F}
+.pc:hover{margin-top:-105px}
+@keyframes deal{to{opacity:1;transform:translate(calc((var(--i) - 1.5)*62px),calc(var(--i)*var(--i)*2px - 6px)) rotate(calc((var(--i) - 1.5)*11deg))}}
+.drift{position:absolute;color:var(--red);opacity:.18;font-size:90px;animation:float 9s ease-in-out infinite;pointer-events:none}
+@keyframes float{50%{transform:translateY(-22px) rotate(8deg)}}
+
+/* sections */
+section{padding:84px 0 0}
+h2{font-size:clamp(30px,5vw,44px);font-weight:700;margin-bottom:30px}
+.hand{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:48px 22px 24px;transition:transform .2s,box-shadow .2s;transform-style:preserve-3d}
+.card:hover{box-shadow:0 14px 30px rgba(0,0,0,.18)}
+.card .s{position:absolute;top:12px;left:16px;font-size:24px;line-height:1}
+.card .s.r{color:var(--red)}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{margin:0 0 14px;color:var(--mute);font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span,.chips span{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 11px;color:var(--brass);font-weight:500}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:36px}
+.two p{margin:0 0 14px;max-width:34em}
+.grp{margin-bottom:20px}.grp b{display:block;margin-bottom:8px;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+
+/* timeline */
+.tl{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--line)}
+.tl .it{position:relative;margin-bottom:30px}
+.tl .it::before{content:"";position:absolute;left:-37px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid var(--bg)}
+.tl h3{font-size:20px}
+.tl small{color:var(--brass);font-weight:500;font-size:14.5px}
+.tl p{margin:6px 0 0;color:var(--mute);max-width:40em;font-size:16px}
+
+footer{margin-top:90px;background:var(--felt);color:var(--felt-ink);padding:56px 0}
+footer h2{margin-bottom:14px}
+footer a{font-size:20px}
+footer p{margin:6px 0}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s;transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.card.rv.in{transition:transform .15s,box-shadow .2s;transition-delay:0s}
+@media(prefers-reduced-motion:reduce){
+ .rv{opacity:1;transform:none;transition:none}
+ .pc{animation:none;opacity:1;transform:translate(calc((var(--i) - 1.5)*62px),0) rotate(calc((var(--i) - 1.5)*11deg))}
+ .drift{animation:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>TK ♠</b>
+<ul><li><a href="#work">Work</a></li><li><a href="#games">Games</a></li><li><a href="#path">Path</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<header class="hero">
+<span class="drift" style="left:4%;top:18%" aria-hidden="true">♣</span>
+<span class="drift" style="right:6%;bottom:8%;animation-delay:-4s" aria-hidden="true">♦</span>
+<div class="wrap">
+<div>
+<h1>Timur Kuzhelev</h1>
+<div class="role" aria-live="off"><span id="typed"></span></div>
+<p class="sub">Developer with a Computer Science background, Unity and C# experience, and a growing focus on game development. I build web applications for paying clients, and I play poker for fun.</p>
+<div class="btns"><a class="btn main" href="#work">See my work</a><a class="btn alt" href="mailto:timurkuzhelev2004@gmail.com">Email me</a></div>
+</div>
+<div class="fan" aria-hidden="true">
+<div class="pc" style="--i:0"><i>A♠</i>♠</div>
+<div class="pc r" style="--i:1"><i>K♥</i>♥</div>
+<div class="pc r" style="--i:2"><i>Q♦</i>♦</div>
+<div class="pc" style="--i:3"><i>J♣</i>♣</div>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<section id="work">
+<h2 class="rv">Selected work</h2>
+<div class="hand">
+<article class="card rv" style="--d:.0s"><span class="s r" aria-hidden="true">♥</span><h3>Employee Bonus Management</h3>
+<p>Full-stack business app for a paid client. Employees, managers, SEO and admins each have their own role, and requests move through multi-level approval and rejection, with responses returned to the right person.</p>
+<div class="tags"><span>Python</span><span>React</span><span>Node.js</span><span>TypeScript</span><span>PostgreSQL</span><span>JWT</span></div></article>
+<article class="card rv" style="--d:.1s"><span class="s" aria-hidden="true">♠</span><h3>Tournament Management</h3>
+<p>Stores participant data and scores. Referees enter and update scores, and current results appear in real time while the data stays consistent.</p>
+<div class="tags"><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></article>
+<article class="card rv" style="--d:.2s"><span class="s r" aria-hidden="true">♦</span><h3>AI Telegram Bot</h3>
+<p>A Telegram bot for school-related use, powered by a Llama model.</p>
+<div class="tags"><span>Python</span><span>Llama AI</span></div></article>
+<article class="card rv" style="--d:.3s"><span class="s" aria-hidden="true">♣</span><h3>Focus Capital website</h3>
+<p>Built and launched site features in Wix with custom code, and improved page loading speed and interface response time.</p>
+<div class="tags"><span>Wix</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></article>
+</div>
+</section>
+
+<section id="games">
+<h2 class="rv">Games and skills</h2>
+<div class="two">
+<div class="rv">
+<p>I have worked in Unity and C# before and completed Unity courses. I want to build on that foundation and spend my time on how games feel to play: timing, feedback and clarity.</p>
+<p>I'm a casual poker player, so I know the rules, the terminology and what keeps a hand interesting for the player.</p>
+</div>
+<div class="rv" style="--d:.1s">
+<div class="grp"><b>Games</b><div class="chips"><span>Unity</span><span>C#</span><span>Poker (casual)</span></div></div>
+<div class="grp"><b>Programming</b><div class="chips"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>OOP</span><span>Algorithms</span></div></div>
+<div class="grp"><b>Web and tools</b><div class="chips"><span>React</span><span>Node.js</span><span>REST APIs</span><span>PostgreSQL</span><span>Git</span><span>CI</span><span>VPS</span></div></div>
+<div class="grp"><b>Languages</b><div class="chips"><span>English C1</span><span>Russian C1</span><span>Kazakh A2</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="path">
+<h2 class="rv">Path so far</h2>
+<div class="tl">
+<div class="it rv"><small>2025 – now</small><h3>Freelance full-stack developer</h3><p>Paid client web apps, including the bonus management system and a tournament tracker. Deployed to a VPS for a UK client; Git, GitHub and CI.</p></div>
+<div class="it rv"><small>Mar – Sep 2025</small><h3>Web developer, Focus Capital</h3><p>Implemented and launched Wix site features and improved performance.</p></div>
+<div class="it rv"><small>2023 – 2025</small><h3>Computer Science, Royal Holloway, University of London</h3><p>Object-oriented programming, Python, web development, mathematical structures.</p></div>
+<div class="it rv"><small>2022 and 2023</small><h3>Intern, Smart Team Service</h3><p>Practical training in Microsoft Dynamics 365 CRM, working in a team.</p></div>
+<div class="it rv"><small>Also</small><h3>Marketing at Narxoz University (2025 – now)</h3><p>British U18 Chess Champion. Silver and bronze certificates in mathematics competitions.</p></div>
+</div>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<h2>Let's talk</h2>
+<p><a href="mailto:timurkuzhelev2004@gmail.com">timurkuzhelev2004@gmail.com</a></p>
+<p>+7 (707) 959-0671 · Almaty, Kazakhstan</p>
+</div></footer>
+
+<script>
+(function(){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+ var el=document.getElementById('typed'),words=['Full-stack developer','Unity and C#','Moving into games'];
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=words.join(' · ');return}
+ var w=0,c=0,del=false;
+ (function tick(){
+  var t=words[w];
+  el.textContent=t.slice(0,c);
+  if(!del&&c===t.length){del=true;return setTimeout(tick,1500)}
+  if(del&&c===0){del=false;w=(w+1)%words.length}
+  c+=del?-1:1;setTimeout(tick,del?35:70);
+ })();
+ if(matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.card').forEach(function(k){
+   k.addEventListener('mousemove',function(e){var r=k.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;k.style.transform='perspective(700px) rotateY('+x*7+'deg) rotateX('+(-y*7)+'deg)'});
+   k.addEventListener('mouseleave',function(){k.style.transform=''});
+  });
+ }
+})();
+</script>
+</body>
+</html>
