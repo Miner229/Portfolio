@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Timur Kuzhelev | Developer moving into games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3EFE4;--ink:#12332A;--mute:#4D655C;--card:#FFFDF7;--line:#CFC8B4;--red:#B3342F;--brass:#8A6A1E;--hero:#0F3B2E;--hero-ink:#F3EFE4}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0B2A21;--ink:#F3EFE4;--mute:#A9BDB3;--card:#103A2E;--line:#2A5A4A;--red:#E0574F;--brass:#D2AE5B;--hero:#08201A;--hero-ink:#F3EFE4}}
+:root[data-theme="dark"]{--bg:#0B2A21;--ink:#F3EFE4;--mute:#A9BDB3;--card:#103A2E;--line:#2A5A4A;--red:#E0574F;--brass:#D2AE5B;--hero:#08201A;--hero-ink:#F3EFE4}
+*{box-sizing:border-box}
+html{height:auto;scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+header{background:var(--hero);color:var(--hero-ink);padding:72px 0 64px}
+header .suits{color:var(--red);font-size:22px;letter-spacing:.35em;margin-bottom:18px}
+h1{font-size:clamp(44px,9vw,92px);font-weight:800;letter-spacing:-.02em}
+header p{max-width:34em;font-size:20px;margin:22px 0 0;color:var(--hero-ink);opacity:.9}
+.cta{display:inline-block;margin-top:28px;padding:12px 22px;background:var(--hero-ink);color:var(--hero);font-weight:500;text-decoration:none;border-radius:4px}
+section{padding:56px 0 8px}
+h2{font-size:clamp(28px,5vw,40px);font-weight:700;margin-bottom:24px}
+.hand{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:44px 20px 22px}
+.card .s{position:absolute;top:12px;left:16px;font-size:22px;line-height:1}
+.card .s.r{color:var(--red)}.card .s.b{color:var(--ink)}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{margin:0 0 12px;color:var(--mute);font-size:15.5px}
+.tags{font-size:13.5px;color:var(--brass);font-weight:500}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.two p{margin:0 0 14px;max-width:34em}
+dl{margin:0}dt{font-weight:500;margin-top:14px}dd{margin:2px 0 0;color:var(--mute)}
+footer{margin-top:64px;padding:40px 0 48px;border-top:1px solid var(--line)}
+footer p{margin:0 0 6px}
+@media (prefers-reduced-motion:no-preference){.cta{transition:transform .15s}.cta:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="suits" aria-hidden="true">♠ ♥ ♦ ♣</div>
+<h1>Timur Kuzhelev</h1>
+<p>Developer with a Computer Science background and a Unity foundation, moving into game development. I build web applications for paying clients, and I play poker for fun.</p>
+<a class="cta" href="mailto:timurkuzhelev2004@gmail.com">Email me</a>
+</div>
+</header>
+
+<main class="wrap">
+<section aria-labelledby="work">
+<h2 id="work">Selected work</h2>
+<div class="hand">
+<article class="card"><span class="s r" aria-hidden="true">♥</span>
+<h3>Employee Bonus Management</h3>
+<p>Full-stack business app for paid client work. Employees, managers, SEO and admins each see their own view, and requests move through multi-level approval and rejection, with responses returned to the right person.</p>
+<div class="tags">Python · React · Node.js · TypeScript · PostgreSQL · JWT</div></article>
+<article class="card"><span class="s b" aria-hidden="true">♠</span>
+<h3>Tournament Management</h3>
+<p>Stores participant data and scores. Referees enter and update scores, and current results show in real time while keeping the data consistent.</p>
+<div class="tags">Python · JavaScript · HTML · CSS</div></article>
+<article class="card"><span class="s r" aria-hidden="true">♦</span>
+<h3>AI Telegram Bot</h3>
+<p>A Telegram bot for school-related use, powered by a Llama model.</p>
+<div class="tags">Python · Llama AI</div></article>
+<article class="card"><span class="s b" aria-hidden="true">♣</span>
+<h3>Focus Capital website</h3>
+<p>Built and launched site features in Wix with custom code, and improved page loading speed and interface response time.</p>
+<div class="tags">Wix · JavaScript · HTML · CSS</div></article>
+</div>
+</section>
+
+<section aria-labelledby="games">
+<h2 id="games">Games and Unity</h2>
+<div class="two">
+<div>
+<p>I have worked in Unity and C# before and completed Unity courses. I want to build on that foundation and work on how games feel to play: timing, feedback and clarity.</p>
+<p>I'm a casual poker player, so I know the rules, the terminology and what keeps a hand interesting for the player.</p>
+</div>
+<dl>
+<dt>Programming</dt><dd>C#, Python, JavaScript, TypeScript, object-oriented programming, algorithms</dd>
+<dt>Performance</dt><dd>Load-speed and response-time optimisation on the web</dd>
+<dt>Workflow</dt><dd>Git, GitHub, CI, VPS deployment</dd>
+<dt>Languages</dt><dd>English C1, Russian C1, Kazakh A2</dd>
+</dl>
+</div>
+</section>
+
+<section aria-labelledby="bg">
+<h2 id="bg">Background</h2>
+<div class="two">
+<p>Computer Science at Royal Holloway, University of London (2023–2025), now studying Marketing at Narxoz University in Almaty. A-Levels in Mathematics, Further Mathematics, Economics and Russian.</p>
+<p>British U18 Chess Champion. Silver and bronze certificates in mathematics competitions.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<p><a href="mailto:timurkuzhelev2004@gmail.com">timurkuzhelev2004@gmail.com</a></p>
+<p>+7 (707) 959-0671 · Almaty, Kazakhstan</p>
+</div>
+</footer>
+</body>
+</html>
