@@ -10,8 +10,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-dmmono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 html {
@@ -27,7 +27,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 :focus-visible {
   outline: 2px solid #35557f;
@@ -50,7 +50,18 @@ body {
 }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
+/* Technology strip: slow, text only, pauses on hover and focus. */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track { display: flex; width: max-content; animation: ticker 50s linear infinite; }
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track { animation-play-state: paused; }
+
 @media (prefers-reduced-motion: reduce) {
+  .ticker-track { width: auto; flex-wrap: wrap; row-gap: 0.5rem; }
+  .ticker-dup { display: none; }
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;

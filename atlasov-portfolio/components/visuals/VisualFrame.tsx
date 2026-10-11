@@ -1,18 +1,16 @@
 import Image from "next/image";
+import type { Lang } from "@/data/i18n";
 import type { Project } from "@/data/projects";
+import { ui } from "@/data/ui";
+import BonusVisual from "./BonusVisual";
 import CrmVisual from "./CrmVisual";
 import MttVisual from "./MttVisual";
-import BonusVisual from "./BonusVisual";
 
 const visuals = { crm: CrmVisual, mtt: MttVisual, bonus: BonusVisual } as const;
-const labels = {
-  crm: "Illustrative interface: customer records and migration stages",
-  mtt: "Illustrative interface: operator workspace with customer information and requests",
-  bonus: "Illustrative interface: employee requests and approval statuses",
-} as const;
 
 /** Shows a real screenshot when one is configured, otherwise a labelled illustration. */
-export default function VisualFrame({ project }: { project: Project }) {
+export default function VisualFrame({ project, lang }: { project: Project; lang: Lang }) {
+  const t = ui[lang].visual;
   const Visual = visuals[project.visual];
   const shot = project.screenshot;
   return (
@@ -22,22 +20,20 @@ export default function VisualFrame({ project }: { project: Project }) {
           {shot ? (
             <Image
               src={shot.src}
-              alt={shot.alt}
+              alt={shot.alt[lang]}
               width={shot.width}
               height={shot.height}
               sizes="(min-width: 1160px) 680px, 100vw"
               className="h-auto w-full"
             />
           ) : (
-            <div role="img" aria-label={labels[project.visual]}>
-              <Visual />
+            <div role="img" aria-label={t[project.visual]}>
+              <Visual lang={lang} />
             </div>
           )}
         </div>
       </div>
-      <figcaption className="mt-2 font-mono text-[0.72rem] text-muted">
-        {shot ? "Screenshot" : "Illustrative interface · fictional sample data, not a client screenshot"}
-      </figcaption>
+      <figcaption className="mt-2 font-mono text-[0.72rem] text-muted">{shot ? t.screenshot : t.illustrative}</figcaption>
     </figure>
   );
 }
