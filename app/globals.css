@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f5f1ea;
+  --color-panel: #fbf9f5;
+  --color-ink: #1a1916;
+  --color-muted: #5d584f;
+  --color-line: #d9d2c6;
+  --color-accent: #35557f;
+}
+
+@theme inline {
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dmmono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+html {
+  scroll-padding-top: 5rem; /* sticky navigation is 4rem tall */
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+body {
+  background: #f5f1ea;
+  color: #1a1916;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+:focus-visible {
+  outline: 2px solid #35557f;
+  outline-offset: 3px;
+}
+::selection { background: #c9d6e6; }
+
+/* Introduction: fade in and move up ~11px over 450ms. Never depends on JavaScript. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(11px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in { animation: rise 450ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* Project sections: hidden state only applies once JavaScript has confirmed it is running. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 350ms ease-out, transform 350ms ease-out;
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .js .reveal { opacity: 1; transform: none; }
+}
